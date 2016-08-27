@@ -14,11 +14,6 @@ export default class ImmutableDataSource {
         });
     }
 
-    cloneWithRows(rows) {
-        this.ds = this.ds.cloneWithRows(rows, getIdentitiesFromList(rows))
-        return this;
-    }
-
     get rowIdentities() {
         return this.ds.rowIdentities
     }
@@ -27,8 +22,21 @@ export default class ImmutableDataSource {
         return this.ds.sectionIdentities;
     }
 
+    cloneWithRows(rows) {
+        this.ds = this.ds.cloneWithRows(rows, getIdentitiesFromList(rows))
+        return this;
+    }
+
+    cloneWithRowsAndSections() {
+        throw new Error('cloneWithRowsAndSections not implemented')
+    }
+
     getRowCount() {
         return this.ds.getRowCount()
+    }
+
+    getRowAndSectionCount() {
+        return this.ds.getRowAndSectionCount()
     }
 
     rowShouldUpdate(sectionIdx, rowIdx) {
@@ -37,5 +45,25 @@ export default class ImmutableDataSource {
 
     getRowData(sectionIdx, rowIdx) {
         return this.ds.getRowData(sectionIdx, rowIdx)
+    }
+
+    getRowIDForFlatIndex(index) {
+        return this.ds.getRowIDForFlatIndex(index)
+    }
+
+    getSectionIDForFlatIndex(index) {
+        return this.ds.getSectionIDForFlatIndex(index)
+    }
+
+    getSectionLengths() {
+        return this.ds.getSectionLengths()
+    }
+
+    sectionHeaderShouldUpdate(sectionIndex) {
+        return this.ds.sectionHeaderShouldUpdate(sectionIndex)
+    }
+
+    getSectionHeaderData(sectionIndex) {
+        return this.ds.getSectionHeaderData(sectionIndex)
     }
 }
