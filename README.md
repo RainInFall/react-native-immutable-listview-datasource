@@ -14,7 +14,7 @@ npm install --save react-native-immutable-listview-datasource
 
 ## Usage
 
-```
+```js
 const ds = new ImmutableDataSource()
 
 this.state = {
@@ -24,7 +24,7 @@ this.state = {
 
 ## Full example
 
-```
+```js
 /* @flow */
 
 import React, {Component} from 'react'
