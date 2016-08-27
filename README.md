@@ -1,4 +1,7 @@
 # React Native Immutable ListView DataSource
+[![Build Status](https://img.shields.io/travis/DaleJefferson/React-Native-Immutable-ListView-DataSource.svg)](https://travis-ci.org/DaleJefferson/React-Native-Immutable-ListView-DataSource)
+[![Downloads per Month](https://img.shields.io/npm/dm/react-native-immutable-listview-datasource.svg)](https://www.npmjs.com/package/react-native-immutable-listview-datasource)
+[![Version](https://img.shields.io/npm/v/react-native-immutable-listview-datasource.svg)](https://www.npmjs.com/package/react-native-immutable-listview-datasource)
 
 ## Why
 
