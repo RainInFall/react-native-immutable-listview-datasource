@@ -1,7 +1,8 @@
 # React Native Immutable ListView DataSource
-[![Build Status](https://img.shields.io/travis/DaleJefferson/React-Native-Immutable-ListView-DataSource.svg)](https://travis-ci.org/DaleJefferson/React-Native-Immutable-ListView-DataSource)
-[![Downloads per Month](https://img.shields.io/npm/dm/react-native-immutable-listview-datasource.svg)](https://www.npmjs.com/package/react-native-immutable-listview-datasource)
-[![Version](https://img.shields.io/npm/v/react-native-immutable-listview-datasource.svg)](https://www.npmjs.com/package/react-native-immutable-listview-datasource)
+[![Build Status](https://img.shields.io/travis/DaleJefferson/React-Native-Immutable-ListView-DataSource.svg?maxAge=3600)](https://travis-ci.org/DaleJefferson/React-Native-Immutable-ListView-DataSource)
+[![Downloads per Month](https://img.shields.io/npm/dm/react-native-immutable-listview-datasource.svg?maxAge=86400)](https://www.npmjs.com/package/react-native-immutable-listview-datasource)
+[![Version](https://img.shields.io/npm/v/react-native-immutable-listview-datasource.svg?maxAge=3600)](https://www.npmjs.com/package/react-native-immutable-listview-datasource)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=86400)]()
 
 ## Why
 
