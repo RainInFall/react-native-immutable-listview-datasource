@@ -1,34 +1,32 @@
 /* @flow */
 
-import React, {Component} from 'react'
+import immutable from 'immutable'
+import ImmutableDataSource from 'react-native-immutable-listview-datasource'
 
 import {
-    AppRegistry,
-    StyleSheet,
     ListView,
+    StyleSheet,
     Text,
-    View
+    View,
 } from 'react-native'
 
-import immutable from 'immutable'
-
-import ImmutableDataSource from 'react-native-immutable-listview-datasource'
+import React, {Component} from 'react'
 
 const styles = StyleSheet.create({
     list: {
         flex: 1,
         padding: 30,
-        backgroundColor: 'rgb(39, 174, 96)'
+        backgroundColor: 'rgb(39, 174, 96)',
     },
     row: {
         margin: 8,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     title: {
         fontSize: 20,
-        color: 'white'
-    }
+        color: 'white',
+    },
 })
 
 const countries = immutable.fromJS([
@@ -36,7 +34,7 @@ const countries = immutable.fromJS([
     {name: 'India', population: '1,267,401,849'},
     {name: 'U.S.A.', population: '322,583,006'},
     {name: 'Indonesia', population: '252,812,245'},
-    {name: 'Brazil', population: '202,033,670'}
+    {name: 'Brazil', population: '202,033,670'},
 ])
 
 const Title = ({children}) => (
@@ -52,7 +50,8 @@ const Row = ({name, population}) => (
 
 const renderRow = (rowData) => (
     <Row name={rowData.get('name')}
-        population={rowData.get('population')} />
+        population={rowData.get('population')}
+    />
 )
 
 export default class CountiesByPopulation extends Component {
@@ -62,23 +61,24 @@ export default class CountiesByPopulation extends Component {
         const ds = new ImmutableDataSource()
 
         this.state = {
-            dataSource: ds.cloneWithRows(countries)
+            dataSource: ds.cloneWithRows(countries),
         }
     }
 
     componentDidMount() {
-      setTimeout(() => {
-          this.setState({
-            dataSource: this.state.dataSource.cloneWithRows(countries.pop())
-          })
-      }, 3000)
+        setTimeout(() => {
+            this.setState({
+                dataSource: this.state.dataSource.cloneWithRows(countries.pop()),
+            })
+        }, 3000)
     }
 
     render() {
         return (
             <ListView style={styles.list}
                 dataSource={this.state.dataSource}
-                renderRow={renderRow} />
+                renderRow={renderRow}
+            />
         )
     }
 }

@@ -1,4 +1,5 @@
 /* @flow */
+/* eslint-disable max-statements */
 
 import DataSource from '../'
 import immutable from 'immutable'
@@ -12,8 +13,8 @@ describe('Data Source', () => {
         expect(new DataSource()).toBeDefined()
     })
 
-    let dataSource
-    let items
+    let dataSource = null
+    let items = null
 
     beforeEach(() => {
         items = immutable.fromJS([

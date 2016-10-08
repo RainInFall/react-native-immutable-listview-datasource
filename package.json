@@ -10,7 +10,9 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --notify"
+    "test": "jest --verbose --notify",
+    "flow": "flow check",
+    "lint": "eslint --ignore-pattern '!.eslintrc.js' ."
   },
   "author": {
     "name": "Dale Jefferson",
@@ -31,13 +33,22 @@
     "react": "^15.2.1"
   },
   "devDependencies": {
+    "@rnfdigital/eslint-config": "^1.0.2",
     "babel-jest": "^16.0.0",
     "babel-preset-react-native": "^1.9.0",
+    "flow-bin": "^0.33.0",
     "immutable": "^3.8.1",
     "jest-cli": "^16.0.1",
     "jest-react-native": "^16.0.0",
     "react": "^15.3.1",
-    "react-native": "^0.34.1"
+    "react-native": "^0.34.1",
+    "babel-eslint": "7.0.0",
+    "eslint": "3.7.1",
+    "eslint-plugin-flowtype": "2.20.0",
+    "eslint-plugin-import": "2.0.0",
+    "eslint-plugin-promise": "2.0.1",
+    "eslint-plugin-react": "6.3.0",
+    "eslint-plugin-react-native": "2.0.0"
   },
   "jest": {
     "preset": "jest-react-native"
