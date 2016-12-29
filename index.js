@@ -7,11 +7,15 @@ const rowHasChanged = (r1, r2) => r1 !== r2
 const getRowData = (dataBlob, sectionID, rowID) => dataBlob[sectionID].get(rowID)
 
 export default class ImmutableDataSource {
-    constructor() {
-        this.ds = new ListView.DataSource({
-            rowHasChanged,
-            getRowData,
-        })
+    constructor(ds) {
+        if (ds) {
+            this.ds = ds
+        } else {
+            this.ds = new ListView.DataSource({
+                rowHasChanged,
+                getRowData,
+            })
+        }
     }
 
     get rowIdentities() {
@@ -23,9 +27,7 @@ export default class ImmutableDataSource {
     }
 
     cloneWithRows(rows) {
-        this.ds = this.ds.cloneWithRows(rows, getIdentitiesFromList(rows))
-
-        return this
+        return new this.constructor(this.ds.cloneWithRows(rows, getIdentitiesFromList(rows)))
     }
 
     cloneWithRowsAndSections() {

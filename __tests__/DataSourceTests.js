@@ -26,6 +26,10 @@ describe('Data Source', () => {
         dataSource = dataSource.cloneWithRows(items)
     })
 
+    it('returns a different instance', () => {
+        expect(dataSource.cloneWithRows(items)).not.toBe(dataSource)
+    })
+
     it('implements cloneWithRows', () => {
         expect(dataSource.cloneWithRows(items)).toBeDefined()
     })

@@ -1,7 +1,7 @@
 /* @flow */
 
 import immutable from 'immutable'
-import ImmutableDataSource from '../index'
+import ImmutableDataSource from 'react-native-immutable-listview-datasource'
 
 import {
     ListView,
@@ -29,14 +29,6 @@ const styles = StyleSheet.create({
     },
 })
 
-const countries = immutable.fromJS([
-    {name: 'China', population: '1,393,783,836'},
-    {name: 'India', population: '1,267,401,849'},
-    {name: 'U.S.A.', population: '322,583,006'},
-    {name: 'Indonesia', population: '252,812,245'},
-    {name: 'Brazil', population: '202,033,670'},
-])
-
 const Title = ({children}) => (
     <Text style={styles.title}>{children}</Text>
 )
@@ -55,23 +47,57 @@ const renderRow = (rowData) => (
     />
 )
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
 export default class CountiesByPopulation extends Component {
     constructor() {
         super()
 
-        const ds = new ImmutableDataSource()
-
         this.state = {
-            dataSource: ds.cloneWithRows(countries),
+            dataSource: new ImmutableDataSource(),
         }
     }
 
-    componentDidMount() {
-        setTimeout(() => {
-            this.setState({
-                dataSource: this.state.dataSource.cloneWithRows(countries.pop()),
-            })
-        }, 3000)
+    setStateAsync(state) {
+        return new Promise((resolve) => {
+            this.setState(state, resolve)
+        })
+    }
+
+    async componentDidMount() {
+        let countries = immutable.fromJS([
+            {name: 'China', population: '1,393,783,836'},
+            {name: 'India', population: '1,267,401,849'},
+            {name: 'U.S.A.', population: '322,583,006'},
+            {name: 'Indonesia', population: '252,812,245'},
+            {name: 'Brazil', population: '202,033,670'},
+        ])
+
+        await sleep(2000)
+
+        await this.setStateAsync({
+            dataSource: this.state.dataSource.cloneWithRows(countries),
+        })
+
+        await sleep(2000)
+
+        await this.setStateAsync({
+            dataSource: this.state.dataSource.cloneWithRows(countries.reverse()),
+        })
+
+        await sleep(2000)
+
+        countries = countries.push(immutable.fromJS({name: 'Japan', population: '12345656778'}))
+
+        await this.setStateAsync({
+            dataSource: this.state.dataSource.cloneWithRows(countries),
+        })
+
+        await sleep(2000)
+
+        await this.setStateAsync({
+            dataSource: this.state.dataSource.cloneWithRows(countries.take(2)),
+        })
     }
 
     render() {

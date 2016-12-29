@@ -29,8 +29,8 @@
     "url": "https://github.com/DaleJefferson/React-Native-Immutable-ListView-DataSource/issues"
   },
   "peerDependencies": {
-    "react": "^15.2.1",
-    "react-native": "^0.30.0"
+    "react": ">15.2.1",
+    "react-native": ">0.30.0"
   },
   "devDependencies": {
     "@rnfdigital/eslint-config": "^1.0.2",
