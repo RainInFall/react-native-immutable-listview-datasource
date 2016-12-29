@@ -9,6 +9,9 @@
     "android"
   ],
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "jest",
     "flow": "flow check",
