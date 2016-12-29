@@ -1,5 +1,4 @@
 /* @flow */
-/* eslint-disable max-statements */
 
 import DataSource from '../'
 import immutable from 'immutable'

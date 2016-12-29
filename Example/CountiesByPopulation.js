@@ -1,7 +1,7 @@
 /* @flow */
 
 import immutable from 'immutable'
-import ImmutableDataSource from 'react-native-immutable-listview-datasource'
+import ImmutableDataSource from '../index'
 
 import {
     ListView,
@@ -49,7 +49,8 @@ const Row = ({name, population}) => (
 )
 
 const renderRow = (rowData) => (
-    <Row name={rowData.get('name')}
+    <Row
+        name={rowData.get('name')}
         population={rowData.get('population')}
     />
 )
@@ -75,9 +76,10 @@ export default class CountiesByPopulation extends Component {
 
     render() {
         return (
-            <ListView style={styles.list}
+            <ListView
                 dataSource={this.state.dataSource}
                 renderRow={renderRow}
+                style={styles.list}
             />
         )
     }
