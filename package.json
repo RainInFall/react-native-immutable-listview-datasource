@@ -23,13 +23,13 @@
     "url": "https://www.dalejefferson.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/DaleJefferson/React-Native-Immutable-ListView-DataSource",
+  "homepage": "https://github.com/DaleJefferson/react-native-immutable-listview-datasource",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DaleJefferson/React-Native-Immutable-ListView-DataSource.git"
+    "url": "https://github.com/DaleJefferson/react-native-immutable-listview-datasource.git"
   },
   "bugs": {
-    "url": "https://github.com/DaleJefferson/React-Native-Immutable-ListView-DataSource/issues"
+    "url": "https://github.com/DaleJefferson/react-native-immutable-listview-datasource/issues"
   },
   "peerDependencies": {
     "react": ">15.2.1",
